@@ -1,0 +1,327 @@
+/* Estilos generales */
+:root {
+    --color-principal: #FFFFFF;
+    --color-secondary: #04B4E0;
+
+    --color-background: #F2F7F9;
+    --color-transparent: transparent;
+
+    --color-icon: #B5B6B7;
+    --color-title: #222;
+    --color-subtitle: #888;
+    --color-text: #555;
+
+    --color-border-reviews: #E5E6E7;
+    --color-company: #A5A6A7;
+    --color-background-contact: #FCFCFC;
+}
+
+/* Estilos generales*/
+html {
+    font-size: 10px;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    font-family: "Poppins", Helvetica, sans-serif;
+    font-size: 1.5rem;
+    background-color: var(--color-background);
+    color: var(--color-text);
+    overflow: hidden;
+}
+
+h1, h2, h3, h4, h5, h6, p, span {
+    color: var(--color-title);
+}
+
+
+/* Estructura principal */
+.layout {
+    position: relative;
+    min-width: 1290px;
+    width: 75%;
+    height: 80vh;
+    min-height: 80vh;
+    margin: 10vh auto;
+
+    display: grid;
+    grid-template-areas: "aside content";
+    grid-template-columns: 30% 70%;
+    overflow-x: hidden;
+    /* Sombra detras del layout */
+    border-radius: 5rem;
+    box-shadow: 0 0 100px -5px rgba(0, 0, 0, 0.25);
+}
+
+/* Barra lateral azul */
+.layout__aside {
+    grid-area: aside;
+
+    border-radius: 4rem 0 0 4rem;
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+.aside__user-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-height: 100%;
+    min-width: 30rem;
+    background-color: var(--color-secondary);
+}
+
+.user-info__container-image {
+    position: relative;
+    display: inline-block;
+    width: 18rem;
+    margin-top: 7rem;
+    z-index: 1;
+}
+
+.user-info__image {
+    width: 100%;
+    background-color: var(--color-principal);
+    border: 0.3rem solid var(--color-principal);
+    border-radius: 20rem;
+}
+
+.user-info__name {
+    font-size: 3.2rem;
+    font-weight: bold;
+    color: var(--color-principal);
+    margin-top: 2.6rem;
+}
+
+.user-info__job {
+    font-size: 1.7rem;
+    font-weight: 200;
+    color: var(--color-principal);
+}
+
+.user-info__links {
+    margin-bottom: 3.6rem;
+}
+
+.links__social {
+    margin-top: 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.social__option {
+    height: 3rem;
+    width: 3rem; 
+    font-size: 1.8rem;
+    line-height: 3.2rem;
+    opacity: 0.9;
+}
+
+.social__icon {
+    color: var(--color-principal);
+}
+
+.user-info__butons {
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+}
+
+.user-info__btn {
+    padding: 3rem;
+    padding-top: 1.3rem;
+    padding-bottom: 1.3rem;
+    border: 2px solid var(--color-principal);
+    border-radius: 3.2rem;
+    color: var(--color-principal);
+    box-shadow: 0 10px 10px -9px rgba(0, 0, 0, 0.22);
+    transition: all 300ms ease-in-out;
+}
+
+.user-info__btn:hover {
+    background-color: var(--color-principal);
+    color: var(--color-secondary);
+}
+
+.footer {
+    position: absolute;
+    bottom: 1.2rem;
+    color: var(--color-principal);
+}
+
+/* Menu de navegacion */
+.layout__menu {
+    display: block;
+    position: fixed;
+    top: 7rem;
+    right: .5rem;
+    min-width: 11rem;
+    background-color: var(--color-transparent);
+}
+
+.menu__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    width: 60%;
+    min-height: 12rem;
+    padding: 2rem 0;
+    margin-left: 2.5rem;
+    background: var(--color-principal);
+    border-radius: 6rem;
+}
+
+.menu__option {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.menu__icon {
+    color: var(--color-icon);
+    font-size: 2.8rem;
+    transition: all 300ms ease-in-out;
+}
+
+.menu__option:hover .menu__icon,
+.menu__link--active .menu__icon {
+    color: var(--color-secondary);
+}
+
+.menu__overlay {
+    position: absolute;
+    right: 0;
+    margin-top: -3rem;
+    display: block;
+    opacity: 0;
+    padding: 0.5rem 1rem;
+    color: var(--color-principal);
+    background-color: var(--color-secondary);
+    transition: all 300ms ease-in-out;
+}
+
+.menu__option:hover .menu__overlay {
+    opacity: 1;
+    right: 100%;
+}
+
+/* Contenedor principal */
+.layout__content {
+    grid-area: content;
+    background-color: var(--color-secondary);
+    border-radius: 0rem 10rem 10rem 0rem;
+    color: var(--color-subtitle);
+    height: 100%;
+    min-height: 100%;
+}
+
+.content__page {
+    min-height: 100%;
+    background-color: var(--color-principal);
+    border-radius: 3rem 5rem 5rem 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.page__title {
+    font-size: 6rem;
+    margin-bottom: 1rem;
+}
+.page__name {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.page__birth {
+    font-size: 1.6rem;
+    font-weight: lighter;
+    color: var(--color-subtitle);
+}
+
+/* (Educacion */
+.content__resume {
+    display: block;
+    height: 100%;
+    min-height: 100%;
+    padding: 6rem;
+    padding-right: 3rem;
+    overflow: auto;
+}
+
+.resume__title {
+    font-size: 3.2rem;
+    position: relative;
+}
+
+.content__resume {
+    justify-content: normal;
+    align-items: flex-start;
+    padding: 6rem;
+    padding-right: 3rem;
+}
+
+.resume__subtitle {
+    margin-bottom: 1.5rem;
+    margin-top: 5rem;
+}
+
+.resume__container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-right: 1.5rem;
+}
+
+.resume__timelines {
+    margin-bottom: 5rem;
+}
+
+.timelines__timeline {
+    position: relative;
+    width: 100%;
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: row;
+}
+
+.timeline__header {
+    flex-basis: 20%;
+    text-align: right;
+    padding-right: 2.5rem;
+}
+
+.timeline__year {
+    margin: 3px 0px;
+    line-height: 1.9rem;
+    font-size: 1.4rem;
+}
+
+.timeline__company {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-size: 1.3rem;
+    font-weight: lighter;
+    color: var(--color-company);
+}
+
+.timeline__description {
+    width: 80%;
+    padding-left: 2.5rem;
+    padding-right: 1.5rem;
+}
+
+.timeline__title {
+    font-size: 1.6rem;
+    margin-bottom: 0.3rem;
+}
+
+.timeline__text {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
